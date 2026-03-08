@@ -42,7 +42,7 @@ app.post('/api/create-payment', async (req, res) => {
         const clientTxnId = "PAY_" + Date.now() + Math.floor(Math.random() * 1000);
 
         // UPIGateway ko request bhejein
-        const response = await axios.post('https://api.upigateway.com/api/create_order', {
+        const response = await axios.post('https://upigateway.com/api/create_order', {
             key: UPI_GATEWAY_KEY,
             client_txn_id: clientTxnId,
             amount: amount.toString(),
