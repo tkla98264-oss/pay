@@ -25,9 +25,9 @@ const db = admin.firestore();
 const app = express();
 
 // Middleware
-app.use(express.json()); // Webhook data parse karne ke liye
-app.use(cors()); // App (Frontend) se request allow karne ke liye
-
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true })); // <-- यह नई लाइन जोड़नी है UPIGateway/EkQR के लिए
+app.use(cors());
 // Aapki UPIGateway API Key
 const UPI_GATEWAY_KEY = process.env.UPI_KEY || "d3bbe951-6080-4660-a7cf-3687e0801654"; 
 
